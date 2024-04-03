@@ -16,16 +16,16 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class OpenGoogle {
     public static void main(String args[]) {
         //System.setProperty("webdriver.chrome.driver", "c:\\Drivers\\chromedriver.exe");
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--remote-allow-origins=*");
-//        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver(options);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(options);
 
 //        WebDriverManager.chromedriver().setup();
 //        WebDriver driver = new ChromeDriver();
-
-        System.setProperty("webdriver.chrome.driver","C:\\Drivers\\chromedriver.exe");
-        WebDriver driver=new ChromeDriver();
+//
+//        System.setProperty("webdriver.chrome.driver","C:\\Drivers\\chromedriver.exe");
+//        WebDriver driver=new ChromeDriver();
 
         driver.get("https://www.w3schools.com/html/html_tables.asp");
         driver.manage().window().maximize();

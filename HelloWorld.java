@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class HelloWorld {
+public class HelloWorld
+{
+    public static void main(Strinf args[])
+    {
+        System.out.println("Welcome to java world");
+    }
 }

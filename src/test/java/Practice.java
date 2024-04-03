@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,17 +21,16 @@ public class Practice {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        WebElement username = driver.findElement(By.name("username"));
-        username.sendKeys("Admin");
- //       System.out.println(username);
-        WebElement password = driver.findElement(By.name("password"));
-        password.sendKeys("admin123");
-//        System.out.println(password);
-        WebElement sub=driver.findElement(By.xpath("//button[@type='submit']"));
-        sub.click();
-        driver.close();
+        //  driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+        driver.get("https://www.echoecho.com");
+
+        JavascriptExecutor je=(JavascriptExecutor) driver;
+        WebElement link=driver.findElement(By.linkText("Online Tools"));
+        je.executeScript("arguments[0].scrollIntoView(true);",link);
+
+//        Thread.sleep(3000);
+//        je.executeScript("windows.scroll(0,--450)","");
+//
     }
 }
 
